@@ -6,7 +6,7 @@ namespace Web.Controllers
     {
         public IActionResult Products()
         {
-
+            return View();
         }
     }
 }
