@@ -6,8 +6,12 @@ using Web.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(@"Server=(LocalDB)\MSSQLLocalDB;Database=CacheTesting;Integrated Security=true"));
-builder.Services.AddTransient<IRepository<Product>,ProductRepository>();
+builder.Services.AddTransient<ProductRepository>();
 builder.Services.AddMemoryCache();
+builder.Services.AddControllersWithViews();
+
+
+
 var app = builder.Build();
 
 app.UseDeveloperExceptionPage();
