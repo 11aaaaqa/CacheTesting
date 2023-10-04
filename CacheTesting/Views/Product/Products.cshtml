@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ApplicationCore.Models.Product>
+
+<title>Products</title>
+
+<div>
+    @foreach (var prod in Model)
+    {
+        <h4>@prod.Name</h4>
+        <p>@prod.Price рублей</p>
+        <p>ID: @prod.Id</p>
+    }
+</div>

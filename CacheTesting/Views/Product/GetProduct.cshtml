@@ -1,0 +1,21 @@
+﻿@model ApplicationCore.Models.Product
+
+<div>
+    <form method="post" asp-controller="Product" asp-action="GetProduct">
+        <div>
+            <label asp-for="Id"></label><br />
+            <span asp-validation-for="Id"></span>
+            <input asp-for="Id" />
+        </div>
+        <input type="submit" value="найти"/>
+    </form>
+</div>
+<div>
+    @if (Model != null)
+    {
+        <h4>@Model.Name</h4>
+        <p>Цена:@Model.Price рублей</p>
+        <p>ID:@Model.Id</p>
+    }
+    
+</div>
